@@ -1,0 +1,79 @@
+.idea
+.vscode
+.clang-format
+.DS_Store
+*~
+_book/
+lib/jemalloc
+tests/internal/flb_tests_internal.h
+tests/runtime/flb_tests_runtime.h
+build/*
+include/fluent-bit/flb_info.h
+include/fluent-bit/flb_plugins.h
+include/fluent-bit/flb_version.h
+include/fluent-bit/conf/*.h
+include/fluent-bit/tls/flb_tls_info.h
+init/fluent-bit.service
+lib/chunkio/include/chunkio/cio_version.h
+lib/monkey/monkey.service
+lib/monkey/include/monkey/mk_core/mk_core_info.h
+
+# ---------------------------------------------------------------------------
+# Pragma fork additions
+# ---------------------------------------------------------------------------
+# Build dirs propios de scripts/build-{linux,macos}.sh (no son 'build/')
+build-linux/
+build-macos/
+
+# Artefactos de empaquetado generados por CPack o nuestros scripts
+*.msi
+*.tar.gz
+*.zip
+
+# Cache donde extraemos el ZIP cuando se prueba run-pragma-fluentbit.ps1
+_bin_cache/
+
+# Confs ad-hoc de diagnostico (fb_test_*.conf) y logs sueltos generados
+# por troubleshooting manual. Nunca deben commitearse.
+fb_test_*.conf
+fb-*.log
+*-build.log
+*-runtime.log
+
+# Python (scripts de diagnostico, helpers locales)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Symbols de Visual Studio
+*.pdb
+*.exp
+*.lib
+
+packaging/.env
+packaging/packages
+packaging/distros/**/sources/
+packaging/releases
+packaging/latest/
+packaging/aws-release-sync/
+workflow/
+*.key
+*.log
+*.o
+# clangd files
+.cache/
+compile_commands.json
+
+workflow/
+.kitchen/
+
+.vagrant/
+# examples
+examples/wasi_serde_json/target/
+# WASM test data
+tests/runtime/wasm/go/*.wasm
+tests/integration/.venv/
+tests/integration/.pytest_cache/
+tests/integration/**/__pycache__/
+tests/integration/results/
